@@ -4,13 +4,9 @@ RSpec.describe "search by zipcode", type: :feature do
   scenario "user searches for stations by zipcode" do
     visit '/'
 
-    within("form-group search-field") do
-      expect(page).to have_content("Search by zip...")
-    end
-
-    within("form-control") do
-      fill_in "Search by zip...", with: "80203"
-      click_button("Locate")
+    within(".search-field") do
+      fill_in "q", with: "80203"
+      click_on("Locate")
     end
 
     expect(page).to have_current_path("/search?zip=80203")
