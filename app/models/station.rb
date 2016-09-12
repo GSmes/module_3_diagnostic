@@ -5,11 +5,20 @@ class Station < OpenStruct
   # end
 
   def self.service
-    binding.pry
     @@service ||= NrelService.new
   end
 
   def self.all(zipcode)
-    stations = service.
+    # binding.pry
+    stations = service.get_fuel_data(zipcode)
   end
+
+  # def self.all(zip)
+  #   station_obj = []
+  #   stations = service.get_fuel_data(zipcode)
+  #   stations["fuel_stations"].each do |station|
+  #     station_obj << Station.new(station)
+  #   end
+  #   station_obj
+  # end
 end
