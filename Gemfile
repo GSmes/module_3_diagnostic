@@ -16,6 +16,7 @@ gem 'pry', :require => 'pry'
 
 group :development, :test do
   gem 'byebug'
+  gem 'simplecov'
   gem 'rspec-rails'
   gem 'rspec-pride'
   gem 'capybara'
